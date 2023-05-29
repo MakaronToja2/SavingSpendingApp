@@ -1,0 +1,15 @@
+<!-- savings_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Savings List</title>
+</head>
+<body>
+    <h1>Savings List</h1>
+    <ul>
+        {% for saving in savings %}
+            <li>{{ saving.name }} - {{ saving.amount }} - {{ saving.category }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

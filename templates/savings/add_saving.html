@@ -1,0 +1,15 @@
+<!-- add_saving.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Saving</title>
+</head>
+<body>
+    <h1>Add Saving</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

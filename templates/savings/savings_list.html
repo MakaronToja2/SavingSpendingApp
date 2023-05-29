@@ -6,10 +6,23 @@
 </head>
 <body>
     <h1>Savings List</h1>
-    <ul>
-        {% for saving in savings %}
-            <li>{{ saving.name }} - {{ saving.amount }} - {{ saving.category }}</li>
-        {% endfor %}
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for saving in savings %}
+                <tr>
+                    <td>{{ saving.name }}</td>
+                    <td>{{ saving.amount }}</td>
+                    <td>{{ saving.category }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>

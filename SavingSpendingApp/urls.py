@@ -18,12 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from Savings.views import savings_list, add_saving
 from .views import home_view
-from accounts.views import login_view
+from accounts.views import login_view, logout_view
 
 urlpatterns = [
     path("", home_view),
     path('admin/', admin.site.urls),
     path('savings/', savings_list, name='savings_list'),
     path('savings/add/', add_saving, name='add_saving'),
-    path("login/", login_view, name='login_view'),
+    path("accounts/login/", login_view, name='login_view'),
+    path("accounts/logout/", logout_view, name="logout_view"),
 ]

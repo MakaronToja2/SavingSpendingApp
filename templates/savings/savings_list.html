@@ -34,14 +34,32 @@
                 <th>Amount</th>
             </tr>
         </thead>
-        <tbody>
-            {% for saving in savings %}
+            <tbody>
                 <tr>
-                    <td>{{ saving.name }}</td>
-                    <td>{{ saving.amount }}</td>
+                    <th colspan="2">User Savings</th>
                 </tr>
-            {% endfor %}
-        </tbody>
+                {% for user_saving in user_savings %}
+                    {% if user_saving %}
+                    <tr>
+                        <td>{{ user_saving.currency.currency }}</td>
+                        <td>{{ user_saving.amount }}</td>
+                    </tr>
+                    {% else %}
+                        <tr><td colspan="2">No user savings yet</td></tr>
+                    {% endif %}
+                {% endfor %}
+                <tr>
+                    <th colspan="2">Shared Savings</th>
+                </tr>
+                {% if shared_saving %}
+                    <tr>
+                        <td>{{ shared_saving.currency }}</td>
+                        <td>{{ shared_saving.amount }}</td>
+                    </tr>
+                {% else %}
+                    <tr><td colspan="2">No shared savings yet</td></tr>
+                {% endif %}
+            </tbody>
     </table>
 </body>
 </html>

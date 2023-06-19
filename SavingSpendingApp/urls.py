@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from Savings.views import savings_list, add_saving
 from .views import home_view
-from accounts.views import login_view, logout_view
+from accounts.views import login_view, logout_view, register_view
 
 urlpatterns = [
     path("", home_view),
@@ -27,4 +27,5 @@ urlpatterns = [
     path('savings/add/', add_saving, name='add_saving'),
     path("accounts/login/", login_view, name='login_view'),
     path("accounts/logout/", logout_view, name="logout_view"),
+    path("accounts/register/", register_view, name="register_view"),
 ]
